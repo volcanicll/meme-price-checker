@@ -1,0 +1,58 @@
+{
+  "name": "meme-price-checker",
+  "displayName": "Meme Price Checker",
+  "description": "Check cryptocurrency prices from Solana and Base chains directly in VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:meme-price-checker.checkPrice"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "meme-price-checker.checkPrice",
+        "title": "Check Token Price"
+      },
+      {
+        "command": "meme-price-checker.refreshPrice",
+        "title": "Refresh Token Price"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "meme-price-checker.checkPrice",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m"
+      },
+      {
+        "command": "meme-price-checker.refreshPrice",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "bun run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "bun run compile && bun run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
