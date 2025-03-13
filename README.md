@@ -4,7 +4,7 @@ A VSCode extension for checking cryptocurrency prices on Solana and Base chains 
 
 ## Demo
 
-![Price Trend View](./demo/demo2.png)
+![Price Trend View](./demo/demo.png)
 
 > The picture shows price trend and transaction volume information
 
