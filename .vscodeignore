@@ -1,0 +1,38 @@
+# 忽略源代码地图
+*.map
+
+# 忽略测试目录
+test/
+tests/
+__tests__/
+spec/
+
+# 忽略 .vscode 目录
+.vscode/
+
+# 忽略 .git 目录
+.git/
+
+.vscode-test/**
+.gitignore
+vsc-extension-quickstart.md
+**/tsconfig.json
+
+# 包含编译后的文件和资源
+!out/**
+!demo/**
+!images/**
+
+# 显式包含demo目录
+!demo/
+!demo/**
+**/.eslintrc.json
+**/*.map
+**/*.ts
+*.vsix
+**/.vscode-test.*
+
+bun.lock
+
+
+

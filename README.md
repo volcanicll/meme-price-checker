@@ -4,12 +4,9 @@ A VSCode extension for checking cryptocurrency prices on Solana and Base chains 
 
 ## Demo
 
-<div align="center">
-  <img src="demo/demo1.png" alt="Token Price Check" width="45%" />
-  <img src="demo/demo2.png" alt="Price Trend View" width="45%" style="margin-left: 10px" />
-</div>
+![Price Trend View](./demo/demo2.png)
 
-> 左图展示了代币展示位置，右图展示了价格趋势和交易量信息
+> The picture shows price trend and transaction volume information
 
 ## Features
 
@@ -18,6 +15,7 @@ A VSCode extension for checking cryptocurrency prices on Solana and Base chains 
 - Support for Solana and Base chains
 - Price trend indicators (5min, 1h, 6h, 24h)
 - Trading volume and liquidity information
+- Automatic price refresh in 30 seconds
 
 ## Installation
 
@@ -36,29 +34,6 @@ A VSCode extension for checking cryptocurrency prices on Solana and Base chains 
 - `Refresh Token Price`: Update token prices
   - Windows/Linux: `Ctrl+Shift+R`
   - macOS: `Cmd+Shift+R`
-
-## Development
-
-### Prerequisites
-
-- [Bun](https://bun.sh) v1.2.0 or higher
-- VSCode v1.85.0 or higher
-
-### Install Dependencies
-
-```bash
-bun install
-```
-
-### Compile
-
-```bash
-bun run compile
-```
-
-### Run and Debug
-
-Press `F5` in VSCode to start debugging mode.
 
 ## Data Source
 

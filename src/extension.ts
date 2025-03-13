@@ -9,13 +9,13 @@ let currentTokenInfo: { chainId: string; address: string } | undefined;
 export function activate(context: vscode.ExtensionContext) {
   console.log("Meme Price Checker is now active!");
 
-  // 初始化状态栏项
+  // initialize status column
   statusBarItem = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
     100
   );
 
-  // 注册命令
+  // Registration command
   let disposable = vscode.commands.registerCommand(
     "meme-price-checker.checkPrice",
     async () => {
@@ -36,22 +36,22 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      // 保存当前token信息
+      // Save current token information
       currentTokenInfo = {
         chainId: validationResult.chainId,
         address: address
       };
 
-      // 清除现有的刷新定时器
+      // Clear existing refresh timers
       if (refreshInterval) {
         clearInterval(refreshInterval);
       }
 
       try {
-        // 立即刷新价格
+        // Refresh prices immediately
         await refreshTokenPrice(validationResult.chainId, address);
 
-        // 设置自动刷新（每30秒）
+        // Set automatic refresh (every 30 seconds)
         refreshInterval = setInterval(() => {
           refreshTokenPrice(validationResult.chainId, address);
         }, 30000);
@@ -61,7 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  // 添加刷新命令
+  // Add refresh command
   let refreshDisposable = vscode.commands.registerCommand(
     "meme-price-checker.refreshPrice",
     () => {
@@ -79,10 +79,10 @@ export function activate(context: vscode.ExtensionContext) {
 function updateStatusBar(tokenData: TokenInfo) {
   if (!statusBarItem) return;
 
-  // 更新代币符号
+  // Update token symbols
   statusBarItem.text = `$(circuit-board) ${tokenData.baseToken.symbol.trim()}`;
 
-  // 将所有信息整合到tooltip中
+  // Integrate all information into tooltip
   const price = Number(tokenData.priceUsd);
   const formatChange = (change: number) => {
     const arrow = change >= 0 ? "↑" : "↓";
